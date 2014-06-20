@@ -9,9 +9,10 @@ MAINTAINER Carlos León, mongrelion@dev-co.org
 RUN apt-get -y install openjdk-7-jre
 
 RUN cd /tmp && \
-    curl https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.2.1.tar.gz > elasticsearch-1.2.1.tar.gz && \
+    wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.2.1.tar.gz && \
     tar xf ./elasticsearch-1.2.1.tar.gz && \
-    mv ./elasticsearch-1.2.1 /opt/elasticsearch
+    mv ./elasticsearch-1.2.1 /opt/elasticsearch && \
+    rm elasticsearch-1.2.1.tar.gz
 
 EXPOSE 9200 9300
 
